@@ -1,4 +1,4 @@
-*{
+* {
     display: flex;
     flex-direction: column;
 }
@@ -15,14 +15,15 @@ h1 {
     -o-transition: all 0.4s ease 0s;
     transition: all 0.4s ease 0s;
 
-  }
+}
 
-  .one h1 {
+.one h1 {
     text-align: center;
     text-transform: uppercase;
     padding-bottom: 5px;
-  }
-  .one h1:before {
+}
+
+.one h1:before {
     width: 28px;
     height: 5px;
     display: block;
@@ -32,8 +33,9 @@ h1 {
     left: 50%;
     margin-left: -14px;
     background-color: #b80000;
-  }
-  .one h1:after {
+}
+
+.one h1:after {
     width: 100px;
     height: 1px;
     display: block;
@@ -43,6 +45,10 @@ h1 {
     left: 50%;
     margin-left: -50px;
     background-color: #b80000;
-  }
+}
 
-  
+.menu {
+    padding: 10px;
+    text-align: center;
+    border: 3px solid green;
+}
