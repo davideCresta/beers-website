@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { BeerServiceService } from './services/beer-service.service';
 import { BeersModel } from './model/beer';
-import { BeersComponent } from './beers/beers.component';
 import { HttpClient } from '@angular/common/http';
 
 
-  
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

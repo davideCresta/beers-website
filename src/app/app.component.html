@@ -6,26 +6,30 @@
   <h1>Le Nostre Birre</h1>
 </div>
 </head>
-  
-<ul class="list-group">
-  <li
-      *ngFor="let beer of beers"
-      class="list-group-item">
-      <ul class="menu">
-        <mat-card>
-          <mat-card-content><h2>Nome:{{ beer.name }}</h2>
-            <mat-card-subtitle>
-              <h2> Grandezza:{{ beer.brewery_type }}</h2>
-              <h2> Provenienza:{{ beer.country }}</h2>
-              <h2> Regione:{{ beer.state }}</h2>
-              <h2> Official WebSite: {{ beer.website_url }}</h2>
-            </mat-card-subtitle>
-          </mat-card-content>  
-            
-        </mat-card>
-        
-      </ul>
 
-  </li>
-</ul>
+<body>
+  <ul class="list-group">
+    <li
+        *ngFor="let beer of beers"
+        class="list-group-item">
+        <ul class="menu">
+          <mat-card>
+            <mat-card-content><h2>Nome:{{ beer.name }}</h2>
+              <mat-card-subtitle>
+                <h2> Grandezza:{{ beer.brewery_type }}</h2>
+                <h2> Provenienza:{{ beer.country }}</h2>
+                <h2> Regione:{{ beer.state }}</h2>
+                <h2> <a target="_blank" href="{{ beer.website_url }}"> Official WebSite</a>  </h2>
+              </mat-card-subtitle>
+            </mat-card-content>
+
+          </mat-card>
+
+        </ul>
+
+    </li>
+  </ul>
+
+</body>
+
 
