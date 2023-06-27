@@ -8,7 +8,7 @@ import { BeerServiceService } from './services/beer-service.service';
 })
 
 export class AppComponent implements OnInit {
-  title(title) {
+  title() {
     throw new Error('Method not implemented.');
   }
   beers: any = [];
