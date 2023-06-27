@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BeerServiceService } from './services/beer-service.service';
+import { BeerService} from './services/beer-service.service';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +8,37 @@ import { BeerServiceService } from './services/beer-service.service';
 })
 
 export class AppComponent implements OnInit {
+
   title() {
     throw new Error('Method not implemented.');
   }
-  beers: any = [];
 
-  constructor(public beerService: BeerServiceService){}
-  ngOnInit(){
-    this.beerService.getPosts().subscribe({
-      next: beers => this.beers = beers,
-    })
+  beers: any;
+
+  constructor(private beerService: BeerService){}
+
+  ngOnInit() {
+    this.loadBeers();
+  }
+
+  loadBeers() {
+    this.beerService.getBeers()
+      .subscribe(beers => {
+        this.beers = beers;
+      });
+  }
+
+  nextPage() {
+    this.beerService.nextPage()
+      .subscribe(beers => {
+        this.beers = beers;
+      });
+  }
+
+  previousPage() {
+    this.beerService.previousPage()
+      .subscribe(beers => {
+        this.beers = beers;
+      });
   }
 }

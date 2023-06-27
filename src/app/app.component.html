@@ -30,6 +30,12 @@
     </li>
   </ul>
 
+  <div *ngIf="beers">
+
+  </div>
+  <button (click)="previousPage()" [disabled]="beers?.page === 1">Previous</button>
+  <button (click)="nextPage()">Next</button>
+
 </body>
 
 

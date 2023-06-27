@@ -1,18 +1,32 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BeerServiceService {
+export class BeerService {
 
-  private URL = 'https://api.openbrewerydb.org/v1/breweries';
+  private apiUrl = 'https://api.openbrewerydb.org/v1/breweries';
+  private currentPage = 1;
+  private pageSize = 3;
 
-  constructor(public httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient) {}
 
+  getBeers(): Observable<any> {
+    const url = `${this.apiUrl}?page=${this.currentPage}&per_page=${this.pageSize}`;
+    return this.httpClient.get(url);
   }
 
-  getPosts(){
-    return this.httpClient.get(this.URL);
+  nextPage() {
+    this.currentPage++;
+    return this.getBeers();
+  }
+
+  previousPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+    return this.getBeers();
   }
 }
