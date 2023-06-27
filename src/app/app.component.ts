@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { BeerServiceService } from './services/beer-service.service';
-import { BeersModel } from './model/beer';
-import { HttpClient } from '@angular/common/http';
-
-
 
 @Component({
   selector: 'app-root',
@@ -12,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class AppComponent implements OnInit {
-  title(title: any) {
+  title(title) {
     throw new Error('Method not implemented.');
   }
   beers: any = [];
