@@ -11,7 +11,7 @@ export class BeerService {
   private currentPage = 1;
   private pageSize = 3;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
   getBeers(): Observable<any> {
     const url = `${this.apiUrl}?page=${this.currentPage}&per_page=${this.pageSize}`;

@@ -7,6 +7,11 @@
 </div>
 </head>
 
+<div class="up-button">
+  <button class="button" (click)="previousPage()" [disabled]="beers?.page === 1">Indietro</button>
+  <button class="button" (click)="nextPage()">Avanti</button>
+</div>
+
 <body>
   <ul class="list-group">
     <li
@@ -16,7 +21,7 @@
           <mat-card>
             <mat-card-content><h2>Nome:{{ beer.name }}</h2>
               <mat-card-subtitle>
-                <h2> Grandezza:{{ beer.brewery_type }}</h2>
+                <h2> Dimensione:{{ beer.brewery_type }}</h2>
                 <h2> Provenienza:{{ beer.country }}</h2>
                 <h2> Regione:{{ beer.state }}</h2>
                 <h2> <a target="_blank" href="{{ beer.website_url }}"> Official WebSite</a>  </h2>
@@ -30,12 +35,15 @@
     </li>
   </ul>
 
-  <div *ngIf="beers">
+  <div *ngIf="beers">   </div>
 
+  <div class="down-button">
+    <button class="button" (click)="previousPage()" [disabled]="beers?.page === 1">Indietro</button>
+    <button class="button" (click)="nextPage()">Avanti</button>
   </div>
-  <button (click)="previousPage()" [disabled]="beers?.page === 1">Previous</button>
-  <button (click)="nextPage()">Next</button>
+
 
 </body>
 
+<footer></footer>
 
