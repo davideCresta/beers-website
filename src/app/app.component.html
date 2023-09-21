@@ -2,9 +2,9 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
   </style>
-<div class="one">
-  <h1>Le Nostre Birre</h1>
-</div>
+  <div class="one">
+    <h1>Le Nostre Birre</h1>
+  </div>
 </head>
 
 <div class="up-button">
@@ -14,36 +14,28 @@
 
 <body>
   <ul class="list-group">
-    <li
-        *ngFor="let beer of beers"
-        class="list-group-item">
-        <ul class="menu">
-          <mat-card>
-            <mat-card-content><h2>Nome:{{ beer.name }}</h2>
-              <mat-card-subtitle>
-                <h2> Dimensione:{{ beer.brewery_type }}</h2>
-                <h2> Provenienza:{{ beer.country }}</h2>
-                <h2> Regione:{{ beer.state }}</h2>
-                <h2> <a target="_blank" href="{{ beer.website_url }}"> Official WebSite</a>  </h2>
-              </mat-card-subtitle>
-            </mat-card-content>
-
-          </mat-card>
-
-        </ul>
-
+    <li *ngFor="let beer of beers" class="list-group-item">
+      <ul class="menu">
+        <mat-card>
+          <mat-card-content>
+            <h2>Nome:{{ beer.name }}</h2>
+            <mat-card-subtitle>
+              <h2> Dimensione:{{ beer.brewery_type }}</h2>
+              <h2> Provenienza:{{ beer.country }}</h2>
+              <h2> Regione:{{ beer.state }}</h2>
+              <h2> <a target="_blank" href="{{ beer.website_url }}"> Official WebSite</a> </h2>
+            </mat-card-subtitle>
+          </mat-card-content>
+        </mat-card>
+      </ul>
     </li>
   </ul>
 
-  <div *ngIf="beers">   </div>
+  <div *ngIf="beers"> </div>
 
   <div class="down-button">
     <button class="button" (click)="previousPage()" [disabled]="beers?.page === 1">Indietro</button>
     <button class="button" (click)="nextPage()">Avanti</button>
   </div>
 
-
 </body>
-
-<footer></footer>
-
